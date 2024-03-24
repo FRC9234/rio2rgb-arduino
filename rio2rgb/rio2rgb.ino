@@ -99,7 +99,7 @@ void loop() {
     pwm2Value = getPulse(PWM2_PIN);
   } 
 
-  if(pwm2Value != 0){
+  if(pwm2Value == 0){
     FastLED.setBrightness(DEFAULT_BRIGHTNESS);
   } else {
     FastLED.setBrightness(constrain(map(pwm2Value, 1000, 2000, 0, 255),0,255));
